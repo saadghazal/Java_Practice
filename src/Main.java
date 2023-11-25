@@ -9,17 +9,17 @@ public class Main {
     public static void main(String[] args) throws FileNotFoundException {
 
 
-//        Scanner inputFile = new Scanner(new FileReader("input.txt"));
-//        PrintWriter outputFile = new PrintWriter("output.txt");
-//        // ODD NUMBERS
-//        // 1 3 5 7 9
-//        outputFile.println("ODD NUMBERS");
-//        while (inputFile.hasNext()){
-//            int number = inputFile.nextInt();
-//            if(number%2 != 0){
-//                outputFile.println(number + "\t");
-//            }
-//        }
+        Scanner inputFile = new Scanner(new FileReader("input.txt"));
+        PrintWriter outputFile = new PrintWriter("output.txt");
+        // ODD NUMBERS
+        // 1 3 5 7 9
+        outputFile.println("ODD NUMBERS");
+        while (inputFile.hasNext()){
+            int number = inputFile.nextInt();
+            if(number%2 != 0){
+                outputFile.println(number + "\t");
+            }
+        }
 //
 //        outputFile.close();
 //
