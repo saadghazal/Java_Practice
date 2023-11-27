@@ -25,6 +25,44 @@ public class Main {
 
     public static void main(String[] args) throws FileNotFoundException {
 
+        int[] list = new int[5];
+        int sum = 0;
+
+        int i;
+
+        for (i = 0; i < list.length; i++)
+                list[i] = console.nextInt();
+
+        System.out.println();
+        System.out.println("The List Of Numbers Is: ");
+        for (i = 0; i < list.length; i++)
+            System.out.print(list[i] + " ");
+
+        int largestNumber = list[0];
+
+        System.out.println();
+        System.out.print("The Sum Of The Numbers Is: ");
+        for (i = 0; i < list.length; i++)
+            sum+=list[i];
+
+        System.out.println(sum);
+
+        System.out.print("The AVG Of The Numbers Is: ");
+        System.out.println(sum * 1.0/list.length* 1.0);
+
+
+
+
+        System.out.print("The Largest Number Of The Numbers Is: ");
+        for (i = 1; i < list.length; i++){
+            if(list[i]>largestNumber){
+                largestNumber = list[i];
+            }
+        }
+        System.out.println(largestNumber);
+
+
+
 
 //        Scanner inputFile = new Scanner(new FileReader("input.txt"));
 //        PrintWriter outputFile = new PrintWriter("output.txt");
