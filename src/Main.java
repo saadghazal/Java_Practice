@@ -23,6 +23,23 @@ public class Main {
     }
 
 
+    static class IntClass{
+        int num;
+        IntClass(){
+            num = 0;
+
+        }
+        IntClass(int value){
+            num = value;
+        }
+
+//        @Override
+//        public String toString() {
+//
+//            return String.valueOf(num);
+//
+//        }
+    }
     public static void main(String[] args) throws FileNotFoundException {
 
 
@@ -51,6 +68,18 @@ public class Main {
 
         System.out.println("Element At Index 1 Is: "+vStr.elementAt(1));
         System.out.println("What is the index of Nusair? "+vStr.indexOf("Mohammed"));
+
+         Vector<IntClass> intClassVector = new Vector<IntClass>();
+         intClassVector.addElement(new IntClass(5));
+         intClassVector.addElement(new IntClass(3));
+         intClassVector.addElement(new IntClass(2));
+         intClassVector.addElement(new IntClass());
+         System.out.println(new IntClass(4));
+         System.out.println("Vector Elements Are: ");
+         for( IntClass number: intClassVector ){
+             System.out.print(number.num+" ");
+         }
+
 
 
 //        int[] listA = {4,7,8,9};
