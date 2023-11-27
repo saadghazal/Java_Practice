@@ -26,6 +26,10 @@ public class Main {
     public static void main(String[] args) throws FileNotFoundException {
 
 
+//        Vector<String> vStr = new Vector<String>(6);
+//        vStr.addElement("Ghazal");
+//        vStr.insertElementAt("Saad",2);
+
         int[] listA = {4,7,8,9};
         int[] listB = new int[listA.length];
 
@@ -39,13 +43,33 @@ public class Main {
         printArray(listB);
         System.out.println();
         if(areEqualsArray(listA,listB)){
-            System.out.println("Arrays are equale ");
+            System.out.println("Arrays are equale");
         }else{
-            System.out.println("Arrays are not equale ");
+            System.out.println("Arrays are not equale");
+        }
+        int[][] matrix = new int[2][3];
+
+
+        System.out.println("Enter 2D Array Values: ");
+        for(int row=0;row<matrix.length;row++){
+            for(int col = 0 ;col<matrix[row].length;col++){
+                System.out.print("Enter Value in row = "+ (row)+" in col = "+(col)+": ");
+                matrix[row][col] = console.nextInt();
+            }
         }
 
+        System.out.println("Sum Of 2D Array Values: "+sumOfEntire2DArray(matrix));
+        System.out.println("Sum Of Each Row:");
+        sumByRow(matrix);
+
+        largestInEachRow(matrix);
 
 
+
+
+
+
+        // printArray(4 printTarget,5 weight,2,3,4,5,6,7,8,9,9 list)
 
 
 //        Scanner inputFile = new Scanner(new FileReader("input.txt"));
@@ -97,15 +121,54 @@ public class Main {
 
     }
 
+
     static void printArray(int[] printedArray){
         for (int i = 0; i < printedArray.length; i++)
             System.out.print(printedArray[i] + " ");
+    }
+    static void largestInEachRow(int[][] list){
+        for(int row = 0;row<list.length;row++){
+            int largestNumInRow = list[row][0];
+            for(int col = 1;col<list[row].length;col++){
+                if(list[row][col]>largestNumInRow){
+                    largestNumInRow = list[row][col];
+                }
+            }
+            System.out.println("Largest Number In Row "+(row+1)+" = "+largestNumInRow);
+        }
+    }
+    static void printArrayForEach(int[] array){
+
+        for(int number: array){
+            System.out.print(number + " ");
+        }
+    }
+    static void sumByRow(int[][] list){
+        int sum;
+        for (int row = 0; row < list.length; row++)
+        {
+            sum = 0;
+            for (int col = 0; col < list[row].length;
+                 col++)
+                sum = sum + list[row][col];
+            System.out.println("Sum of row " + (row + 1)
+                    + " = "+ sum);
+        }
     }
     static int sumOfArray(int[] array){
         int sum = 0;
         for (int i = 0; i < array.length; i++)
             sum+=array[i];
 
+        return  sum;
+    }
+    static int sumOfEntire2DArray(int[][] list){
+        int sum = 0;
+        for(int row = 0;row<list.length;row++){
+            for(int col =0 ;col<list[row].length;col++){
+                sum+=list[row][col];
+            }
+        }
         return  sum;
     }
     static boolean areEqualsArray(int[] array1,int[] array2){
