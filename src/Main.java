@@ -25,39 +25,19 @@ public class Main {
 
     public static void main(String[] args) throws FileNotFoundException {
 
-        int[] list = new int[5];
 
-        int i;
+        int[] listA = {4,7,8,9};
+        int[] listB = new int[listA.length];
 
-        for (i = 0; i < list.length; i++)
-                list[i] = console.nextInt();
-
-        System.out.println();
-        System.out.println("The List Of Numbers Is: ");
-
-        printArray(list);
-
-        int largestNumber = list[0];
-
-        System.out.println();
-        System.out.print("The Sum Of The Numbers Is: ");
-        int sumOfArray = sumOfArray(list);
-
-        System.out.println(sumOfArray);
-
-        System.out.print("The AVG Of The Numbers Is: ");
-        System.out.println(sumOfArray * 1.0/list.length* 1.0);
-
-
-        System.out.print("The Largest Number Of The Numbers Is: ");
-        for (i = 1; i < list.length; i++){
-            if(list[i]>largestNumber){
-                largestNumber = list[i];
-            }
+        for(int i=0;i<listA.length;i++){
+            listB[i]=listA[i];
         }
-        System.out.println(largestNumber);
-
-
+        listB[2]=155;
+        System.out.println("List A Components: ");
+        printArray(listA);
+        System.out.println();
+        System.out.println("List B Components: ");
+        printArray(listB);
 
 
 
@@ -122,4 +102,5 @@ public class Main {
 
         return  sum;
     }
+
 }
