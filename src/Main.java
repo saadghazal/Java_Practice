@@ -32,12 +32,18 @@ public class Main {
         for(int i=0;i<listA.length;i++){
             listB[i]=listA[i];
         }
-        listB[2]=155;
         System.out.println("List A Components: ");
         printArray(listA);
         System.out.println();
         System.out.println("List B Components: ");
         printArray(listB);
+        System.out.println();
+        if(areEqualsArray(listA,listB)){
+            System.out.println("Arrays are equale ");
+        }else{
+            System.out.println("Arrays are not equale ");
+        }
+
 
 
 
@@ -101,6 +107,18 @@ public class Main {
             sum+=array[i];
 
         return  sum;
+    }
+    static boolean areEqualsArray(int[] array1,int[] array2){
+        if(array1.length != array2.length){
+            return false;
+        }
+
+        for(int i = 0 ;i<array1.length;i++){
+            if(array1[i] != array2[i]){
+                return  false;
+            }
+        }
+        return true;
     }
 
 }
