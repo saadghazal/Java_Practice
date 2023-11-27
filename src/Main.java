@@ -6,6 +6,23 @@ public class Main {
     static Scanner console = new Scanner(System.in);
 
 
+    void ghazal(int age){
+
+    }
+    void ghazal(){
+
+    }
+    void ghazal(double weight){
+
+    }
+    void ghazal(int age,double weight){
+
+    }
+    void ghazal(String weight,int age){
+
+    }
+
+
     public static void main(String[] args) throws FileNotFoundException {
 
 
