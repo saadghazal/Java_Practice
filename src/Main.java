@@ -26,43 +26,66 @@ public class Main {
     public static void main(String[] args) throws FileNotFoundException {
 
 
-//        Vector<String> vStr = new Vector<String>(6);
-//        vStr.addElement("Ghazal");
-//        vStr.insertElementAt("Saad",2);
+        Vector<String> vStr = new Vector<String>(6);
+        vStr.addElement("Ghazal");
+        vStr.addElement("Nusair");
+        vStr.addElement("Omari");
 
-        int[] listA = {4,7,8,9};
-        int[] listB = new int[listA.length];
+        System.out.println("Vector Elements Before Adding Element At Index 2: "+vStr);
+        System.out.println("Vector Size Is: "+vStr.size());
+        vStr.insertElementAt("Marashdeh",2);
 
-        for(int i=0;i<listA.length;i++){
-            listB[i]=listA[i];
-        }
-        System.out.println("List A Components: ");
-        printArray(listA);
-        System.out.println();
-        System.out.println("List B Components: ");
-        printArray(listB);
-        System.out.println();
-        if(areEqualsArray(listA,listB)){
-            System.out.println("Arrays are equale");
-        }else{
-            System.out.println("Arrays are not equale");
-        }
-        int[][] matrix = new int[2][3];
+        System.out.println("Vector Elements After Adding Element At Index 2: "+vStr);
+        System.out.println("Vector Size Is: "+vStr.size());
+        vStr.removeElementAt(2);
 
+        System.out.println("Vector Elements After Deleting Elemant At Index 2: "+vStr);
+        System.out.println("Vector Size Is: "+vStr.size());
 
-        System.out.println("Enter 2D Array Values: ");
-        for(int row=0;row<matrix.length;row++){
-            for(int col = 0 ;col<matrix[row].length;col++){
-                System.out.print("Enter Value in row = "+ (row)+" in col = "+(col)+": ");
-                matrix[row][col] = console.nextInt();
-            }
+        System.out.print("Is Marashdeh Not There ? ");
+        if(!vStr.contains("Marashdeh")){
+            System.out.println("YES HE IS NOT THERE!!!");
+        }else {
+            System.out.println("NO HE IS THERE!!!");
         }
 
-        System.out.println("Sum Of 2D Array Values: "+sumOfEntire2DArray(matrix));
-        System.out.println("Sum Of Each Row:");
-        sumByRow(matrix);
+        System.out.println("Element At Index 1 Is: "+vStr.elementAt(1));
+        System.out.println("What is the index of Nusair? "+vStr.indexOf("Mohammed"));
 
-        largestInEachRow(matrix);
+
+//        int[] listA = {4,7,8,9};
+//        int[] listB = new int[listA.length];
+//
+//        for(int i=0;i<listA.length;i++){
+//            listB[i]=listA[i];
+//        }
+//        System.out.println("List A Components: ");
+//        printArray(listA);
+//        System.out.println();
+//        System.out.println("List B Components: ");
+//        printArray(listB);
+//        System.out.println();
+//        if(areEqualsArray(listA,listB)){
+//            System.out.println("Arrays are equale");
+//        }else{
+//            System.out.println("Arrays are not equale");
+//        }
+//        int[][] matrix = new int[2][3];
+//
+//
+//        System.out.println("Enter 2D Array Values: ");
+//        for(int row=0;row<matrix.length;row++){
+//            for(int col = 0 ;col<matrix[row].length;col++){
+//                System.out.print("Enter Value in row = "+ (row)+" in col = "+(col)+": ");
+//                matrix[row][col] = console.nextInt();
+//            }
+//        }
+//
+//        System.out.println("Sum Of 2D Array Values: "+sumOfEntire2DArray(matrix));
+//        System.out.println("Sum Of Each Row:");
+//        sumByRow(matrix);
+//
+//        largestInEachRow(matrix);
 
 
 
@@ -122,66 +145,66 @@ public class Main {
     }
 
 
-    static void printArray(int[] printedArray){
-        for (int i = 0; i < printedArray.length; i++)
-            System.out.print(printedArray[i] + " ");
-    }
-    static void largestInEachRow(int[][] list){
-        for(int row = 0;row<list.length;row++){
-            int largestNumInRow = list[row][0];
-            for(int col = 1;col<list[row].length;col++){
-                if(list[row][col]>largestNumInRow){
-                    largestNumInRow = list[row][col];
-                }
-            }
-            System.out.println("Largest Number In Row "+(row+1)+" = "+largestNumInRow);
-        }
-    }
-    static void printArrayForEach(int[] array){
-
-        for(int number: array){
-            System.out.print(number + " ");
-        }
-    }
-    static void sumByRow(int[][] list){
-        int sum;
-        for (int row = 0; row < list.length; row++)
-        {
-            sum = 0;
-            for (int col = 0; col < list[row].length;
-                 col++)
-                sum = sum + list[row][col];
-            System.out.println("Sum of row " + (row + 1)
-                    + " = "+ sum);
-        }
-    }
-    static int sumOfArray(int[] array){
-        int sum = 0;
-        for (int i = 0; i < array.length; i++)
-            sum+=array[i];
-
-        return  sum;
-    }
-    static int sumOfEntire2DArray(int[][] list){
-        int sum = 0;
-        for(int row = 0;row<list.length;row++){
-            for(int col =0 ;col<list[row].length;col++){
-                sum+=list[row][col];
-            }
-        }
-        return  sum;
-    }
-    static boolean areEqualsArray(int[] array1,int[] array2){
-        if(array1.length != array2.length){
-            return false;
-        }
-
-        for(int i = 0 ;i<array1.length;i++){
-            if(array1[i] != array2[i]){
-                return  false;
-            }
-        }
-        return true;
-    }
+//    static void printArray(int[] printedArray){
+//        for (int i = 0; i < printedArray.length; i++)
+//            System.out.print(printedArray[i] + " ");
+//    }
+//    static void largestInEachRow(int[][] list){
+//        for(int row = 0;row<list.length;row++){
+//            int largestNumInRow = list[row][0];
+//            for(int col = 1;col<list[row].length;col++){
+//                if(list[row][col]>largestNumInRow){
+//                    largestNumInRow = list[row][col];
+//                }
+//            }
+//            System.out.println("Largest Number In Row "+(row+1)+" = "+largestNumInRow);
+//        }
+//    }
+//    static void printArrayForEach(int[] array){
+//
+//        for(int number: array){
+//            System.out.print(number + " ");
+//        }
+//    }
+//    static void sumByRow(int[][] list){
+//        int sum;
+//        for (int row = 0; row < list.length; row++)
+//        {
+//            sum = 0;
+//            for (int col = 0; col < list[row].length;
+//                 col++)
+//                sum = sum + list[row][col];
+//            System.out.println("Sum of row " + (row + 1)
+//                    + " = "+ sum);
+//        }
+//    }
+//    static int sumOfArray(int[] array){
+//        int sum = 0;
+//        for (int i = 0; i < array.length; i++)
+//            sum+=array[i];
+//
+//        return  sum;
+//    }
+//    static int sumOfEntire2DArray(int[][] list){
+//        int sum = 0;
+//        for(int row = 0;row<list.length;row++){
+//            for(int col =0 ;col<list[row].length;col++){
+//                sum+=list[row][col];
+//            }
+//        }
+//        return  sum;
+//    }
+//    static boolean areEqualsArray(int[] array1,int[] array2){
+//        if(array1.length != array2.length){
+//            return false;
+//        }
+//
+//        for(int i = 0 ;i<array1.length;i++){
+//            if(array1[i] != array2[i]){
+//                return  false;
+//            }
+//        }
+//        return true;
+//    }
 
 }
