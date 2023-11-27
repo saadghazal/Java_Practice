@@ -26,7 +26,6 @@ public class Main {
     public static void main(String[] args) throws FileNotFoundException {
 
         int[] list = new int[5];
-        int sum = 0;
 
         int i;
 
@@ -35,22 +34,19 @@ public class Main {
 
         System.out.println();
         System.out.println("The List Of Numbers Is: ");
-        for (i = 0; i < list.length; i++)
-            System.out.print(list[i] + " ");
+
+        printArray(list);
 
         int largestNumber = list[0];
 
         System.out.println();
         System.out.print("The Sum Of The Numbers Is: ");
-        for (i = 0; i < list.length; i++)
-            sum+=list[i];
+        int sumOfArray = sumOfArray(list);
 
-        System.out.println(sum);
+        System.out.println(sumOfArray);
 
         System.out.print("The AVG Of The Numbers Is: ");
-        System.out.println(sum * 1.0/list.length* 1.0);
-
-
+        System.out.println(sumOfArray * 1.0/list.length* 1.0);
 
 
         System.out.print("The Largest Number Of The Numbers Is: ");
@@ -60,6 +56,8 @@ public class Main {
             }
         }
         System.out.println(largestNumber);
+
+
 
 
 
@@ -111,5 +109,17 @@ public class Main {
 
         System.exit(0);
 
+    }
+
+    static void printArray(int[] printedArray){
+        for (int i = 0; i < printedArray.length; i++)
+            System.out.print(printedArray[i] + " ");
+    }
+    static int sumOfArray(int[] array){
+        int sum = 0;
+        for (int i = 0; i < array.length; i++)
+            sum+=array[i];
+
+        return  sum;
     }
 }
